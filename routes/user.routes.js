@@ -71,10 +71,10 @@ userRouter.post("/login", async (req, res) => {
     console.log(err);
     return res.status(500).json(err);
   }
-});
+})
 
-// userRouter.get("/teste", isAuth, attachCurrentUser, async (req, res) => {
-//   return res.status(200).json(req.currentUser);
-// });
+userRouter.get("/teste", isAuth, attachCurrentUser, async (req, res) => {
+  return res.status(200).json(req.auth);
+});
 
 export { userRouter };
